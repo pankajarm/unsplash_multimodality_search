@@ -6,13 +6,14 @@ from PIL import Image
 import streamlit as st
 from config import PORT_EXPOSE, PROTOCOL, HOST, IMAGE_RESIZE_FACTOR, TOP_K
 
-# print("PROTOCOL:", PROTOCOL)
-# print("HOST:", HOST)
-# print("PORT_EXPOSE:", PORT_EXPOSE)
+print("PROTOCOL:", PROTOCOL)
+print("HOST:", HOST)
+print("PORT_EXPOSE:", PORT_EXPOSE)
 
 # load data da
+print("LOADING DATA DA.....")
 data_da = DocumentArray.load_binary("data_da.bin", compress='lz4')
-print("data_da size:", len(data_da))
+print("SUCCESS.. data_da size:", len(data_da))
 
 
 # def get_docs_from_sqlite(connection: str, table: str) -> DocumentArray:

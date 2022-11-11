@@ -34,7 +34,7 @@ if "matches" in locals():
         image_id = str(str(match.uri).split("/")[1]).split(".")[0]
 
         st.image(image, use_column_width="auto")
-        st.markdown(f"[![Source]()](https://unsplash.com/photos/{image_id})")
+        st.markdown(f"Source (https://unsplash.com/photos/{image_id})")
         
 
     # image_iterator = paginator("Select a result page", matched_images,on_sidebar=False)
