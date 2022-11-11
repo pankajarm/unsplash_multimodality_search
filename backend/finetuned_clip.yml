@@ -1,0 +1,14 @@
+jtype: Flow
+version: '1'
+with:
+  port: 51000
+executors:
+  - name: clip_o
+    uses:
+      jtype: CLIPEncoder
+      metas:
+        py_modules:
+          - clip_server.executors.clip_onnx
+      with:
+        model_path: 'unsplash-finetuned-onnx' # path to unsplash finetuned onnx models
+    replicas: 1
