@@ -11,9 +11,14 @@ print("HOST:", HOST)
 print("PORT_EXPOSE:", PORT_EXPOSE)
 
 # load data da
-print("LOADING DATA DA.....")
-data_da = DocumentArray.load_binary("data_da.bin", compress='lz4')
-print("SUCCESS.. data_da size:", len(data_da))
+
+
+def load_data_da(verbose=False):
+    print("LOADING DATA DA.....")
+    data_da = DocumentArray.load_binary("data_da.bin", compress='lz4')
+    print("SUCCESS.. data_da size:", len(data_da))
+    if verbose:
+        print(data_da.summary())
 
 
 # def get_docs_from_sqlite(connection: str, table: str) -> DocumentArray:
@@ -40,6 +45,7 @@ def search_by_text(query_text:str, verbose=False):
     client = get_client()
     input_docarray = create_text_query_da(query_text)
     vec = client.encode(input_docarray, show_progress=True)
+    # print("vec", vec)
     results = data_da.find(query=vec, limit=TOP_K)
     # results = client.post('/search', inputs=input_docarray, return_results=True, show_progress=True)
     if verbose:

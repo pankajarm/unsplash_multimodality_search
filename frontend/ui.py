@@ -1,5 +1,5 @@
 import streamlit as st
-from helpers import search_by_text, resize_image, search_by_image
+from helpers import search_by_text, resize_image, search_by_image, load_data_da
 from widgets import sidebar_widget, paginator
 
 
@@ -7,7 +7,7 @@ st.title("Unsplash lite Multimodal Search")
 
 # ---------- Sidebar
 input_media = sidebar_widget()
-
+load_data_da(verbose=True)
 # ---------- Wait for user inputs
 # ---------- Wait for user inputs
 if input_media == "text":

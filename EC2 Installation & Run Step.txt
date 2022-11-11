@@ -1,0 +1,75 @@
+STEPS FOR BACKEND
+    INSTALL!!!!!!
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt install python3-pip
+    which python3
+
+    pip3 install pipenv
+    # add path to ~/bashrc
+    export PATH="$PATH:$HOME/.local/bin"
+
+    #execute bashrc
+    . ~/.bashrc
+    which virtualenv
+
+    git clone https://github.com/pankajarm/unsplash_multimodality_search.git
+    cd unsplash_multimodality_search/backend/
+    pipenv shell
+    pipenv install
+    "DON'T WORRY, GIVE 5 MINUTE AS IT IS SLIENT INSTALL!"
+
+    scp -i "nov_10_2022.pem" unsplash-finetuned-onnx.zip ubuntu@ec2-35-92-151-46.us-west-2.compute.amazonaws.com:~/unsplash_multimodality_search/backend
+
+
+    sudo apt install unzip
+    unzip unsplash-finetuned-onnx.zip
+    clt+d
+
+    RUN!!!!!
+    screen
+    pipenv shell
+    python3 -m clip_server finetuned_clip.yml
+    clt+a+d
+
+
+STEPS for FRONTEND
+    INSTALLATION!
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt install python3-pip
+    which python3
+
+    pip3 install pipenv
+    # add path to ~/bashrc
+    export PATH="$PATH:$HOME/.local/bin"
+    #execute bashrc
+    . ~/.bashrc
+    which virtualenv
+    sudo apt install unzip
+
+    git clone https://github.com/pankajarm/unsplash_multimodality_search.git
+    cd unsplash_multimodality_search/frontend/
+
+
+    LOCAL
+    scp -i "nov_10_2022.pem" resize_images.zip ubuntu@ec2-54-201-69-28.us-west-2.compute.amazonaws.com:~/unsplash_multimodality_search/frontend
+    scp -i "nov_10_2022.pem" data_da.bin.zip ubuntu@ec2-54-201-69-28.us-west-2.compute.amazonaws.com:~/unsplash_multimodality_search/frontend
+
+
+    unzip resize_images.zip
+    unzip data_da.bin.zip
+
+    rm resize_images.zip
+    rm data_da.bin.zip
+    
+    pipenv shell
+    pipenv install
+    clt+d
+
+
+    RUN!!!!
+    screen
+    pipenv shell
+    streamlit run ui.py
+    clt+a+d
