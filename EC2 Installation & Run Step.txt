@@ -17,7 +17,7 @@ STEPS FOR BACKEND
     cd unsplash_multimodality_search/backend/
     pipenv shell
     pipenv install
-    "DON'T WORRY, GIVE 5 MINUTE AS IT IS SLIENT INSTALL!"
+    "DON'T WORRY, GIVE 5-10 MINUTE AS IT IS A SLIENT INSTALL!"
 
     scp -i "YOUR_KEY_PAIR.pem" unsplash-finetuned-onnx.zip ubuntu@YOUR_MACHINE_IP.MACHINE_REGION.compute.amazonaws.com:~/unsplash_multimodality_search/backend
 
@@ -35,7 +35,7 @@ STEPS FOR BACKEND
 
 STEPS for FRONTEND
     INSTALLATION!
-    (Steps START only if it's a different machine)
+    "Start of Addtional Steps only if FRONTEND Machinbe a different machine than BACKEND"
     sudo apt-get update
     sudo apt-get upgrade
     sudo apt install python3-pip
@@ -51,21 +51,21 @@ STEPS for FRONTEND
 
     git clone https://github.com/pankajarm/unsplash_multimodality_search.git
     cd unsplash_multimodality_search/frontend/
-    (Steps ENDS only if it's a different machine)
+    "End of Additoinal Steps"
 
-    LOCAL (on your local terminal)
+    LOCAL (on your local terminal on macosx/windows(putty)/linux)
     scp -i "YOUR_KEY_PAIR.pem" resize_images.zip ubuntu@YOUR_MACHINE_IP.MACHINE_REGION.compute.amazonaws.com:~/unsplash_multimodality_search/frontend
-    scp -i "YOUR_KEY_PAIR.pem" data_da.bin.zip ubuntu@eYOUR_MACHINE_IP.MACHINE_REGION.compute.amazonaws.com:~/unsplash_multimodality_search/frontend
+    scp -i "YOUR_KEY_PAIR.pem" data_da.bin ubuntu@eYOUR_MACHINE_IP.MACHINE_REGION.compute.amazonaws.com:~/unsplash_multimodality_search/frontend
 
-
+    "Steps for Remote(AWS EC2) Machine"
+    cd unsplash_multimodality_search/frontend/
     unzip resize_images.zip
-    unzip data_da.bin.zip
 
     rm resize_images.zip
-    rm data_da.bin.zip
     
     pipenv shell
     pipenv install
+    "DON'T WORRY, GIVE 3-5 MINUTE AS IT IS A SLIENT INSTALL!"
     streamlit hello
     clt+z/x
     clt+d
