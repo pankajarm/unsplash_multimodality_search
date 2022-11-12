@@ -1,6 +1,7 @@
 import streamlit as st
 from helpers import search_by_text, resize_image, search_by_image
 from widgets import sidebar_widget, paginator
+from config import IMAGE_RESIZE_FACTOR, DEBUG
 
 
 st.title("Unsplash lite Multimodal Search")
@@ -13,14 +14,14 @@ if input_media == "text":
     text_query = st.text_input(label="Search term")
     text_search_button = st.button("Search")
     if text_search_button:
-        matches = search_by_text(text_query, verbose=False)
+        matches = search_by_text(text_query, verbose=DEBUG)
         st.success("success")
 
 elif input_media == "image":
     image_query = st.file_uploader(label="Image file")
     image_search_button = st.button("Search")
     if image_search_button:
-        matches = search_by_image(image_query, verbose=False)
+        matches = search_by_image(image_query, verbose=DEBUG)
         st.success("success")
 
 # matched_images = []
@@ -28,7 +29,7 @@ if "matches" in locals():
     for match in matches[0]:
         # print("match:", match)
         # print("match.uri", match.uri)
-        image = resize_image(match.uri, resize_factor=2)
+        image = resize_image(match.uri, resize_factor=IMAGE_RESIZE_FACTOR)
         # matched_images.append(image)
         image_id = str(str(match.uri).split("/")[1]).split(".")[0]
 
