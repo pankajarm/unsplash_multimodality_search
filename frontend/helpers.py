@@ -4,7 +4,7 @@ from docarray import DocumentArray, Document
 from clip_client import Client
 from PIL import Image
 import streamlit as st
-from config import PORT_EXPOSE, PROTOCOL, HOST, IMAGE_RESIZE_FACTOR, TOP_K
+from config import PORT_EXPOSE, PROTOCOL, HOST, IMAGE_RESIZE_FACTOR, TOP_K, DATA_DA_FILE_NAME, COMPRESSION_METHOD
 
 print("PROTOCOL:", PROTOCOL)
 print("HOST:", HOST)
@@ -15,11 +15,13 @@ print("PORT_EXPOSE:", PORT_EXPOSE)
 
 def load_data_da(verbose=False):
     print("LOADING DATA DA.....")
-    data_da = DocumentArray.load_binary("data_da.bin", compress='lz4')
+    data_da = DocumentArray.load_binary(DATA_DA_FILE_NAME, compress=COMPRESSION_METHOD)
     print("SUCCESS.. data_da size:", len(data_da))
     if verbose:
         print(data_da.summary())
+    return data_da
 
+data_da = load_data_da(verbose=True)
 
 # def get_docs_from_sqlite(connection: str, table: str) -> DocumentArray:
 #     cfg = SqliteConfig(connection, table)
