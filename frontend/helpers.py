@@ -2,6 +2,7 @@ import base64
 from docarray import DocumentArray, Document
 # from docarray.array.sqlite import SqliteConfig
 from clip_client import Client
+import urllib.request
 from PIL import Image
 import streamlit as st
 from config import *
@@ -39,7 +40,8 @@ def get_client(show_progress: bool = DEBUG) -> Client:
     return c
 
 def resize_image(filename: str, resize_factor: str=IMAGE_MAX_SIZE) -> Image:
-    image = Image.open(filename)
+    urllib.request.urlretrieve(filename, "test.png")
+    image = Image.open("test.png")
     # w, h = image.size
     # return image.resize((w * resize_factor, h * resize_factor), Image.ANTIALIAS)
     return image.thumbnail(IMAGE_MAX_SIZE)
