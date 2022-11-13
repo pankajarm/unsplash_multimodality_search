@@ -40,11 +40,15 @@ def get_client(show_progress: bool = DEBUG) -> Client:
     return c
 
 def resize_image(filename: str, resize_factor: str=IMAGE_MAX_SIZE) -> Image:
-    urllib.request.urlretrieve(filename, "test.png")
-    image = Image.open("test.png")
-    # w, h = image.size
-    # return image.resize((w * resize_factor, h * resize_factor), Image.ANTIALIAS)
-    return image.thumbnail(IMAGE_MAX_SIZE)
+    try:
+        # w, h = image.size
+        # return image.resize((w * resize_factor, h * resize_factor), Image.ANTIALIAS)
+        if "http" in filename:
+            urllib.request.urlretrieve(filename, "test.png")
+            image = Image.open("test.png")
+            return image.thumbnail(IMAGE_MAX_SIZE)
+    except:
+        return None
 
 def search_by_text(query_text:str, verbose=DEBUG):
     client = get_client()
