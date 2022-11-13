@@ -42,9 +42,9 @@ def get_client(show_progress: bool = DEBUG) -> Client:
 def resize_image(filename: str, resize_factor: str=IMAGE_MAX_SIZE) -> Image:
     # w, h = image.size
     # return image.resize((w * resize_factor, h * resize_factor), Image.ANTIALIAS)
-    print("filename:", filename)
-    urllib.request.urlretrieve(filename, "test.jpg")
-    image = Image.open("test.jpg")
+    # print("filename:", filename)
+    urllib.request.urlretrieve(filename, "test.png")
+    image = Image.open("test.png")
     image.thumbnail(IMAGE_MAX_SIZE)
     return image
 

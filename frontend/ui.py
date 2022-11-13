@@ -28,7 +28,7 @@ elif input_media == "image":
 if "matches" in locals():
     for match in matches[0]:
         # print("match:", match)
-        print("match.uri", match.uri)
+        # print("match.uri", match.uri)
         # just check here
         if "https://" in str(match.uri):
             # matched_images.append(image)
@@ -36,7 +36,7 @@ if "matches" in locals():
             # st.markdown(f"[![Src]({image})]({match.uri})")
             image = resize_image(match.uri, resize_factor=IMAGE_MAX_SIZE)
             st.image(image, use_column_width="auto")
-            st.markdown(f"Source({match.uri})")
+            st.markdown(f"Source ({match.uri})")
         
 
     # image_iterator = paginator("Select a result page", matched_images,on_sidebar=False)

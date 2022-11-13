@@ -1,6 +1,6 @@
 # client
 TOP_K = 20
-IMAGE_MAX_SIZE = (300,300)
+IMAGE_MAX_SIZE = (600,600)
 DEBUG = False
 
 # serving via REST
