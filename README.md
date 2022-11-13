@@ -16,13 +16,13 @@ TIP: Instead of trying just simple generic keywords, try full sentences like "*W
 
 Try Yourself here:
 
-**Unsplash Lite MultiModality Search Demo (http://unsplash-lite-front-http-lb-927462080.us-west-2.elb.amazonaws.com)**
+**[Unsplash Lite MultiModality Search Demo](http://unsplash-lite-front-http-lb-927462080.us-west-2.elb.amazonaws.com)**
 
 Please star the repo if you like this project.
 
 Credits:
 
-* Unsplash Lite Dataset Team [https://github.com/unsplash/datasets] (https://github.com/unsplash/datasets)
+* Unsplash Lite Dataset Team [https://github.com/unsplash/datasets](https://github.com/unsplash/datasets)
 
 * JINA Team [https://jina.ai/](https://jina.ai/)
 
