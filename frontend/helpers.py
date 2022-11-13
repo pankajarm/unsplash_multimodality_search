@@ -43,9 +43,10 @@ def resize_image(filename: str, resize_factor: str=IMAGE_MAX_SIZE) -> Image:
     # w, h = image.size
     # return image.resize((w * resize_factor, h * resize_factor), Image.ANTIALIAS)
     print("filename:", filename)
-    urllib.request.urlretrieve(filename, "test.png")
-    image = Image.open("test.png")
-    return image.thumbnail(IMAGE_MAX_SIZE)
+    urllib.request.urlretrieve(filename, "test.jpg")
+    image = Image.open("test.jpg")
+    image.thumbnail(IMAGE_MAX_SIZE)
+    return image
 
 def search_by_text(query_text:str, verbose=DEBUG):
     client = get_client()
