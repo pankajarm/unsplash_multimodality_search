@@ -1,7 +1,7 @@
 import streamlit as st
 from helpers import search_by_text, resize_image, search_by_image
 from widgets import sidebar_widget, paginator
-from config import IMAGE_RESIZE_FACTOR, DEBUG
+from config import IMAGE_MAX_SIZE, DEBUG
 
 
 st.title("Unsplash lite Multimodal Search")
@@ -29,13 +29,13 @@ if "matches" in locals():
     for match in matches[0]:
         # print("match:", match)
         # print("match.uri", match.uri)
-        # image = resize_image(match.uri, resize_factor=IMAGE_RESIZE_FACTOR)
+        image = resize_image(match.uri, resize_factor=IMAGE_MAX_SIZE)
         # matched_images.append(image)
         # image_id = str(str(match.uri).split("/")[1]).split(".")[0]
 
         # st.image(image, use_column_width="auto")
-        # st.markdown(f"[] [({match.uri})]")
-        st.markdown(f"[![Src]({match.uri})]({match.uri})")
+        # st.markdown(f"Source({match.uri})")
+        st.markdown(f"[![Src]({image})]({match.uri})")
         
 
     # image_iterator = paginator("Select a result page", matched_images,on_sidebar=False)

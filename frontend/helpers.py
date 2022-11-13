@@ -38,10 +38,11 @@ def get_client(show_progress: bool = DEBUG) -> Client:
     c.show_progress = show_progress
     return c
 
-def resize_image(filename: str, resize_factor: str=IMAGE_RESIZE_FACTOR) -> Image:
+def resize_image(filename: str, resize_factor: str=IMAGE_MAX_SIZE) -> Image:
     image = Image.open(filename)
-    w, h = image.size
-    return image.resize((w * resize_factor, h * resize_factor), Image.ANTIALIAS)
+    # w, h = image.size
+    # return image.resize((w * resize_factor, h * resize_factor), Image.ANTIALIAS)
+    return image.thumbnail(IMAGE_MAX_SIZE)
 
 def search_by_text(query_text:str, verbose=DEBUG):
     client = get_client()
