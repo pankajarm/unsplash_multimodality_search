@@ -29,13 +29,17 @@ if "matches" in locals():
     for match in matches[0]:
         # print("match:", match)
         # print("match.uri", match.uri)
-        image = resize_image(match.uri, resize_factor=IMAGE_MAX_SIZE)
+        try:
+            image = resize_image(match.uri, resize_factor=IMAGE_MAX_SIZE)
+        except:
+            continue
+        
         # matched_images.append(image)
         # image_id = str(str(match.uri).split("/")[1]).split(".")[0]
 
-        # st.image(image, use_column_width="auto")
-        # st.markdown(f"Source({match.uri})")
-        st.markdown(f"[![Src]({image})]({match.uri})")
+        st.image(image, use_column_width="auto")
+        st.markdown(f"Source({match.uri})")
+        # st.markdown(f"[![Src]({image})]({match.uri})")
         
 
     # image_iterator = paginator("Select a result page", matched_images,on_sidebar=False)
