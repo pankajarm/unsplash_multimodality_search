@@ -6,7 +6,7 @@ When you combined the textual and image features together in same vector space t
 
 See the demo for youself to see the difference between traditional search results and multi modality search results. 
 
-I compare the results from this demo with search results from https://unsplash.com and with Google Image Search.
+I compare the results from this demo with search results from https://unsplash.com and with Google Image Search (also uses multi modality search solution).
 
 TIP: Instead of trying just simple generic keywords, try full sentences like "*Woman Smelling Gardenia Flower*" or "*A person about to jump from mountain top*"
 
