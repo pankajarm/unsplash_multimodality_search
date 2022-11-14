@@ -6,12 +6,12 @@ When you combined the textual and image features together in same vector space t
 
 See the demo for youself to see the difference between traditional search results and multi modality search results. 
 
-I compare the results from this demo with search results from https://unsplash.com and with Google Image Search.
+I compare the results from this demo with search results from https://unsplash.com and with Google Image Search (also uses multi modality search solution).
 
 TIP: Instead of trying just simple generic keywords, try full sentences like "*Woman Smelling Gardenia Flower*" or "*A person about to jump from mountain top*"
 
 
-[![Unsplash Multi Modality Search](https://github.com/pankajarm/unsplash_multimodality_search/blob/main/a_person_about_to_jump_from_mountain_top.png)](https://github.com/pankajarm/unsplash_multimodality_search/blob/main/MultiModal-UnSplash-Lite-Demo_720.mov)
+[![Unsplash Multi Modality Search](https://github.com/pankajarm/unsplash_multimodality_search/blob/main/Woman_Smelling_Gardenia_Flower.png)](http://unsplash-lite-front-http-lb-927462080.us-west-2.elb.amazonaws.com/)
 
 
 Try Yourself here:
