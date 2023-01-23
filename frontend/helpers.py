@@ -73,7 +73,7 @@ def search_by_image(input, local_file=False, verbose=DEBUG):
         image_query_doc = Document(blob=data)
         image_query_doc.convert_blob_to_image_tensor()
     
-    image_query_doc.set_image_tensor_shape((80, 60))
+    image_query_doc.set_image_tensor_shape((250, 250))
 
     client = get_client()
     # input_docarray = create_image_query_da(image_query_doc)
